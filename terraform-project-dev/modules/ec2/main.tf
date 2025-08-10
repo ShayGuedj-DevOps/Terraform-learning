@@ -9,3 +9,8 @@ resource "aws_instance" "dev_project" {
     Environment = "Development"
   }
 }
+
+resource "aws_eip" "dev_eip" {
+  instance = aws_instance.dev_project.id
+}
+
